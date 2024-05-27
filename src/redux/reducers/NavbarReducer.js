@@ -11,7 +11,7 @@ export const DataAsyncThunk = createAsyncThunk(
     'fetchData',
     async(_,ThunkApi) => {
         try {
-            const response = await fetch("http://localhost:3100/api/markets");
+            const response = await fetch("https://blackcoffer-visualization-dashboard.onrender.com/api/markets");
             let data = await response.json();
             data = data.slice(0, 30);
             ThunkApi.dispatch(setData(data));
